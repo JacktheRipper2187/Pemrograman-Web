@@ -1,6 +1,6 @@
 <?php
 // Lokasi penyimpanan file yang diunggah
-$targetDirectory = "documents/";
+$targetDirectory = "img/"; // Ubah nama direktori sesuai kebutuhan
 
 // Periksa apakah direktori penyimpanan ada, jika tidak maka buat
 if (!file_exists($targetDirectory)) {
@@ -18,7 +18,7 @@ if (isset($_FILES['files']) && !empty($_FILES['files']['name'][0])) {
 
         // Validasi file berdasarkan ekstensi
         $fileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
-        $allowedExtensions = array("pdf", "doc", "docx");
+        $allowedExtensions = array("jpg", "jpeg", "png", "gif");
 
         if (in_array($fileType, $allowedExtensions)) {
             // Pindahkan file yang diunggah ke direktori penyimpanan
