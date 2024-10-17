@@ -1,5 +1,5 @@
 <?php
-if (isset($_POST["submit"])) {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $targetDirectory = "documents/"; // Direktori tujuan untuk menyimpan dokumen
     $targetFile = $targetDirectory . basename($_FILES["documentToUpload"]["name"]);
     $documentFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
